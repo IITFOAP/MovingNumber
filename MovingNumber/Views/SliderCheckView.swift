@@ -11,8 +11,8 @@ struct SliderCheckView: View {
     @EnvironmentObject private var manager: AppManager
 
     var body: some View {
-        VStack {
-            HStack {
+        VStack(spacing: 20) {
+            HStack() {
                 Text("0")
                 SliderView(
                     currentValue: $manager.data.currentValue,
@@ -20,12 +20,14 @@ struct SliderCheckView: View {
                 )
                 Text("100")
             }
-            .padding(.bottom, 20)
             Button("Проверь меня!") {
                 manager.toggleAlert()
             }
             .alert("Ваш счет", isPresented: $manager.showAlert, actions: {}) {
                 Text("\(manager.computeScore().formatted())")
+            }
+            Button("Начать заново") {
+                manager.getRandomValue()
             }
         }
     }

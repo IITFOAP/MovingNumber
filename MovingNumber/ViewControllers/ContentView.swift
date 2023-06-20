@@ -14,10 +14,8 @@ struct ContentView: View {
         VStack(spacing: 20) {
             Text("Подвинь слайдер, как можно ближе к: \(lround(manager.data.targetValue))")
             SliderCheckView()
-            Button("Начать заново") {
-                manager.getRandomValue()
-            }
         }
+        .padding()
         .environmentObject(manager)
     }
 }
