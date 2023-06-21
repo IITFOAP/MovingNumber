@@ -14,10 +14,7 @@ struct SliderCheckView: View {
         VStack(spacing: 20) {
             HStack() {
                 Text("0")
-                SliderView(
-                    currentValue: $manager.data.currentValue,
-                    targetValue: $manager.data.targetValue
-                )
+                SliderView()
                 Text("100")
             }
             Button("Проверь меня!") {

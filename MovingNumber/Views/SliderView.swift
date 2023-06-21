@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct SliderView: View {
-    @Binding var currentValue: Double
-    @Binding var targetValue: Double
-    
     var body: some View {
         UISliderRepresentation()
     }
